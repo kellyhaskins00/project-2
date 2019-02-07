@@ -20,13 +20,13 @@
 }
 
 #home {
-  margin-top: 380px;
+  /* margin-top: 380px; */
 }
 /*spinnin wheel*/
 
 body{
 	background:#eaeaea;
-	color:#fff;
+	color: black;
 	font-size:18px;
 	font-family: 'Exo 2', sans-serif;
 }
