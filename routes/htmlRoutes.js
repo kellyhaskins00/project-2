@@ -19,20 +19,14 @@ module.exports = function(app) {
       });
     });
   });
-    // Load map page
-    app.get("/views/layouts/map.handlebars", function (req, res) {
+    // Load game page
+    app.get("/views/layouts/game.handlebars", function (req, res) {
       console.log("i am here!");
-      res.render("map", {
-        msg: "Welcome!"
-      });
-    });// Load game page
-    app.get("/views/views/layouts/game.handlebars", function (req, res) {
-      console.log("this is the game!");
       res.render("game", {
         msg: "Welcome!"
       });
     });
-
+  
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
