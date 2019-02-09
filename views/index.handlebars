@@ -1,6 +1,35 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
 <div class="container" id="main">
 
-    <div id="logo"><img src="https://static.thenounproject.com/png/166485-200.png"></div>
+    <div id="logo">
+      <a href="#section2"><img src="https://cdn.dribbble.com/users/603228/screenshots/3538356/hop.png" style="width:350px;height:auto;"></a></div>
     <p>
       <span id="quote">The</span><span id="quote2">SPINS</span>
     </p>
@@ -19,7 +48,7 @@
             <label for="example-text">Add 2-4 Players</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
           </div>
-          <div class="form-group">
+          <div class="form-group" id="section2">
             <label for="example-description">Pick Your Color</label>
             <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Red, Blue, Green, Yellow"></textarea>
           </div>

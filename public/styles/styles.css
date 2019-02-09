@@ -7,32 +7,58 @@
 }
 
 /*home page*/
+#logo {
+  padding-top: 85px;
+}
 #quote {
-  color: #daab28;
+  color: #71bf44;
   font-size: 35pt;
   font-family: 'Anton', sans-serif;
 }
 
 #quote2 {
-  color: #daab28;
+  color: black;
   font-size: 35pt;
   font-family: 'Poiret One', cursive;
 }
 
-/* #main {
-  background-color: #e65447
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2 {
+  font-family: 'Poiret One', cursive;
+}
+
+h3 {
+  font-family: 'Poiret One', cursive;
+}
+
+label {
+  font-family: 'Poiret One', cursive;
+}
+
+input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
+  background-color: #71bf44 !important;
+  background-image: none !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+/* .form-control {
+  background-color: #71bf44 !important;
 } */
 
-#home {
-  /* margin-top: 380px; */
-}
-/*spinnin wheel*/
-
 body{
-	background:#eaeaea;
+	background:
+  #89d1c7;
 	color: black;
 	font-size:18px;
 	font-family: 'Exo 2', sans-serif;
+}
+
+
+#home {
+  padding-top: 350px;
 }
 
 a{
