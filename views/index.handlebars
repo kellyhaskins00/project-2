@@ -2,62 +2,66 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
+  $(document).ready(function () {
+    // Add smooth scrolling to all links
+    $("a").on('click', function (event) {
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
+        // Store hash
+        var hash = this.hash;
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
   });
-});
 </script>
 
 {{!-- Main logo section --}}
 
 <div class="container" id="main">
 
-    <div id="logo">
-      <img src="https://cdn.dribbble.com/users/603228/screenshots/3538356/hop.png" style="width:350px;height:auto;"></div>
-    <p>
-      <span id="quote">THE</span><span id="quote2">SPINS</span>
-    </p>
-    <p>Ever struggle deciding on where to grab a beer?</p>
-  
+  <div id="logo">
+    <img src="https://cdn.dribbble.com/users/603228/screenshots/3538356/hop.png" style="width:350px;height:auto;"></div>
+  <p>
+    <span id="quote">THE</span><span id="quote2">SPINS</span>
+  </p>
+  <p>Ever struggle deciding on where to grab a beer?</p>
+
 </div>
 
 {{!-- arrow to scroll down to wheel --}}
 
-<div class= "container" id="arrow">
+<div class="container" id="arrow">
   <a href="#section2"><img src="https://cdn.iconscout.com/icon/free/png-256/dropdown-25-475073.png" style="width:80px;height:auto;"></a>
 </div>
 
 {{!-- Wheel to find brewery --}}
-
 <div>
   <div class="container" id="wheel">
+    <p id="section2">
+    <span id="quote3">LET'S</span><span id="quote4">GO TO...</span>
+  </p>
     <div class="row">
       <div class="col-8 offset-2">
-    
-<div class="container" id="section2">
-    <div id="chart"></div>
-    <div id="question"><h1></h1></div>
-    </div>
+
+        <div class="container">
+          <div id="chart"></div>
+          <div id="question">
+            <h1></h1>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -66,231 +70,299 @@ $(document).ready(function(){
 
 {{!-- Arrow to form --}}
 <div class="container" id="find">
-      <p>Need Help Finding your spot?</p>
-    <div class= "container" id="arrow">
-  <a href="#section3"><img src="https://cdn.iconscout.com/icon/free/png-256/dropdown-25-475073.png" style="width:80px;height:auto;"></a>
-</div>
+  <p>Need Help Finding your spot?</p>
+  <div class="container" id="arrow">
+    <a href="#section3"><img src="https://cdn.iconscout.com/icon/free/png-256/dropdown-25-475073.png" style="width:80px;height:auto;"></a>
+  </div>
 </div>
 
 {{!-- end --}}
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
-   
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-        var padding = {top:20, right:40, bottom:0, left:0},
-            w = 500 - padding.left - padding.right,
-            h = 500 - padding.top  - padding.bottom,
-            r = Math.min(w, h)/2,
-            rotation = 0,
-            oldrotation = 0,
-            picked = 100000,
-            oldpick = [],
-            color = d3.scale.ordinal().range(["#2dcc70", "#e65445", "#3598db", "#f1c40f"]);
-            
-        var data = [
-                    {"label":"Optomism",  "value":1,  "question":"Optomism"}, 
-                    {"label":"Old Stove",  "value":1,  "question":"Old Stove"}, 
-                    {"label":"Elysian",  "value":1,  "question":"Elysian"}, 
-                    {"label":"RedHook Brewery",  "value":1,  "question":"RedHook Brewery"}, 
-                    {"label":"Tap House",  "value":1,  "question":"Tap House"},
-                    {"label":"Hard Rock",  "value":1,  "question":"Hard Rock"}, 
-                    {"label":"Peddler Brewing Company",  "value":1,  "question":"Peddler Brewing Company"}, 
-                    {"label":"Pike Brewing",  "value":1,  "question":"Pike Brewing"}, 
-                    {"label":"Two Beers Brewing Co.",  "value":1,  "question":"Two Beers Brewing Co."},
-                    {"label":"Pyramid", "value":1, "question":"Pyramid"}, 
-                    {"label":"Fremont Brewing", "value":1, "question":"Fremont Brewing"}, 
-                    {"label":"Lagunitas Brewing Company", "value":1, "question":"Lagunitas Brewing Company"}, 
-                    {"label":"Reuben's Brews", "value":1, "question":"Reuben's Brews"}, 
-                    {"label":"Rooftop Brewing Company", "value":1, "question":"Rooftop Brewing Company"}, 
-                    {"label":"Holy Mountain Brewing Company", "value":1, "question":"Holy Mountain Brewing Company"},
-                    {"label":"Cloudburst Brewing", "value":1, "question":"Cloudburst Brewing"},
-                    /*{"label":"", "value":1, "question":"What type of bracket is used for CSS rules?"}, // { }
-                    {"label":"", "value":1, "question":"Which HTML tag is used for specifying a paragraph?"}, //<p>
-                    {"label":"", "value":1, "question":"What should always be the very first line of code in your HTML?"}, //<!DOCTYPE html>
-                    {"label":"", "value":1, "question":"What HTML tag holds all of the metadata tags for your page?"}, //<head>
-                    {"label":"", "value":1, "question":"In CSS, what character separates a property from a value?"}, // colon
-                    {"label":"", "value":1, "question":"What HTML tag holds all of your CSS code?"}, // <style>
-                    {"label":"", "value":1, "question":"What file extension should you use for your web pages?"}, // .html
-                    {"label":"", "value":1, "question":"Which coding language is used for marking up content and structure on a web page?"}, // HTML
-                    {"label":"", "value":1, "question":"Which coding language is used for specifying the design of a web page?"}, // CSS
-                    {"label":"", "value":1, "question":"Which coding language is used for adding functionality to a web page?"}, // JavaScript
-                    {"label":"", "value":1, "question":"What CSS property is used for making the edges of a box visible?"}, // border
-                    {"label":"", "value":1, "question":"What character symbol is used at the end of each CSS statement?"},//semi-colon
-                    {"label":"", "value":1, "question":"By default, how wide is a <div> box?"}, //100%
-                    {"label":"", "value":1, "question":"What character symbol do I use to specify multiple CSS selectors in one code block?"} //comma
-        */
-        ];
+
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  var padding = { top: 20, right: 40, bottom: 0, left: 0 },
+    w = 500 - padding.left - padding.right,
+    h = 500 - padding.top - padding.bottom,
+    r = Math.min(w, h) / 2,
+    rotation = 0,
+    oldrotation = 0,
+    picked = 100000,
+    oldpick = [],
+    color = d3.scale.ordinal().range(["#d35002", "#ffa602", "#f9d692", "#c18e01"]);
+
+  var data = [
+    { "label": "Optomism", "value": 1, "question": "Optomism" },
+    { "label": "Old Stove", "value": 1, "question": "Old Stove" },
+    { "label": "Elysian", "value": 1, "question": "Elysian" },
+    { "label": "RedHook Brewery", "value": 1, "question": "RedHook Brewery" },
+    { "label": "Tap House", "value": 1, "question": "Tap House" },
+    { "label": "Hard Rock", "value": 1, "question": "Hard Rock" },
+    { "label": "Peddler Brewing Company", "value": 1, "question": "Peddler Brewing Company" },
+    { "label": "Pike Brewing", "value": 1, "question": "Pike Brewing" },
+    { "label": "Two Beers Brewing Co.", "value": 1, "question": "Two Beers Brewing Co." },
+    { "label": "Pyramid", "value": 1, "question": "Pyramid" },
+    { "label": "Fremont Brewing", "value": 1, "question": "Fremont Brewing" },
+    { "label": "Lagunitas Brewing Company", "value": 1, "question": "Lagunitas Brewing Company" },
+    { "label": "Reuben's Brews", "value": 1, "question": "Reuben's Brews" },
+    { "label": "Rooftop Brewing Company", "value": 1, "question": "Rooftop Brewing Company" },
+    { "label": "Holy Mountain Brewing Company", "value": 1, "question": "Holy Mountain Brewing Company" },
+    { "label": "Cloudburst Brewing", "value": 1, "question": "Cloudburst Brewing" },
+  ];
 
 
-        var svg = d3.select('#chart')
-            .append("svg")
-            .data([data])
-            .attr("width",  w + padding.left + padding.right)
-            .attr("height", h + padding.top + padding.bottom);
+  var svg = d3.select('#chart')
+    .append("svg")
+    .data([data])
+    .attr("width", w + padding.left + padding.right)
+    .attr("height", h + padding.top + padding.bottom);
 
-        var container = svg.append("g")
-            .attr("class", "chartholder")
-            .attr("transform", "translate(" + (w/2 + padding.left) + "," + (h/2 + padding.top) + ")");
+  var container = svg.append("g")
+    .attr("class", "chartholder")
+    .attr("transform", "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")");
 
-        var vis = container
-            .append("g");
-            
-        var pie = d3.layout.pie().sort(null).value(function(d){return 1;});
+  var vis = container
+    .append("g");
 
-        // declare an arc generator function
-        var arc = d3.svg.arc().outerRadius(r);
+  var pie = d3.layout.pie().sort(null).value(function (d) { return 1; });
 
-        // select paths, use arc generator to draw
-        var arcs = vis.selectAll("g.slice")
-            .data(pie)
-            .enter()
-            .append("g")
-            .attr("class", "slice");
-            
+  // declare an arc generator function
+  var arc = d3.svg.arc().outerRadius(r);
 
-        arcs.append("path")
-            .attr("fill", function(d, i){ return color(i); })
-            .attr("d", function (d) { return arc(d); });
+  // select paths, use arc generator to draw
+  var arcs = vis.selectAll("g.slice")
+    .data(pie)
+    .enter()
+    .append("g")
+    .attr("class", "slice");
 
-        // add the text
-        arcs.append("text").attr("transform", function(d){
-                d.innerRadius = 0;
-                d.outerRadius = r;
-                d.angle = (d.startAngle + d.endAngle)/2;
-                return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -10) +")";
-            })
-            .attr("text-anchor", "end")
-            .text( function(d, i) {
-                return data[i].label;
-            });
+
+  arcs.append("path")
+    .attr("fill", function (d, i) { return color(i); })
+    .attr("d", function (d) { return arc(d); });
+
+  // add the text
+  arcs.append("text").attr("transform", function (d) {
+    d.innerRadius = 0;
+    d.outerRadius = r;
+    d.angle = (d.startAngle + d.endAngle) / 2;
+    return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius - 10) + ")";
+  })
+    .attr("text-anchor", "end")
+    .text(function (d, i) {
+      return data[i].label;
+    });
+
+  container.on("click", spin);
+
+
+  function spin(d) {
+
+    container.on("click", null);
+
+    //all slices have been seen, all done
+    console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
+    if (oldpick.length == data.length) {
+      console.log("done");
+      container.on("click", null);
+      return;
+    }
+
+    var ps = 360 / data.length,
+      pieslice = Math.round(1440 / data.length),
+      rng = Math.floor((Math.random() * 1440) + 360);
+
+    rotation = (Math.round(rng / ps) * ps);
+
+    picked = Math.round(data.length - (rotation % 360) / ps);
+    picked = picked >= data.length ? (picked % data.length) : picked;
+
+
+    if (oldpick.indexOf(picked) !== -1) {
+      d3.select(this).call(spin);
+      return;
+    } else {
+      oldpick.push(picked);
+    }
+
+    rotation += 90 - Math.round(ps / 2);
+
+    vis.transition()
+      .duration(3000)
+      .attrTween("transform", rotTween)
+      .each("end", function () {
+
+        //mark question as seen
+        d3.select(".slice:nth-child(" + (picked + 1) + ") path")
+          .attr("fill", "#111");
+
+        //populate question
+        d3.select("#question h1")
+          .text(data[picked].question);
+
+        oldrotation = rotation;
 
         container.on("click", spin);
+      });
+  }
+
+  //make arrow
+  svg.append("g")
+    .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h / 2) + padding.top) + ")")
+    .append("path")
+    .attr("d", "M-" + (r * .15) + ",0L0," + (r * .05) + "L0,-" + (r * .05) + "Z")
+    .style({ "fill": "black" });
+
+  //draw spin circle
+  container.append("circle")
+    .attr("cx", 0)
+    .attr("cy", 0)
+    .attr("r", 60)
+    .style({ "fill": "white", "cursor": "pointer" });
+
+  //spin text
+  container.append("text")
+    .attr("x", 0)
+    .attr("y", 15)
+    .attr("text-anchor", "middle")
+    .text("SPIN")
+    .style({ "font-weight": "bold", "font-size": "30px" });
 
 
-        function spin(d){
-            
-            container.on("click", null);
-
-            //all slices have been seen, all done
-            console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
-            if(oldpick.length == data.length){
-                console.log("done");
-                container.on("click", null);
-                return;
-            }
-
-            var  ps       = 360/data.length,
-                 pieslice = Math.round(1440/data.length),
-                 rng      = Math.floor((Math.random() * 1440) + 360);
-                
-            rotation = (Math.round(rng / ps) * ps);
-            
-            picked = Math.round(data.length - (rotation % 360)/ps);
-            picked = picked >= data.length ? (picked % data.length) : picked;
+  function rotTween(to) {
+    var i = d3.interpolate(oldrotation % 360, rotation);
+    return function (t) {
+      return "rotate(" + i(t) + ")";
+    };
+  }
 
 
-            if(oldpick.indexOf(picked) !== -1){
-                d3.select(this).call(spin);
-                return;
-            } else {
-                oldpick.push(picked);
-            }
+  function getRandomNumbers() {
+    var array = new Uint16Array(1000);
+    var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
 
-            rotation += 90 - Math.round(ps/2);
+    if (window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues === "function") {
+      window.crypto.getRandomValues(array);
+      console.log("works");
+    } else {
+      //no support for crypto, get crappy random numbers
+      for (var i = 0; i < 1000; i++) {
+        array[i] = Math.floor(Math.random() * 100000) + 1;
+      }
+    }
 
-            vis.transition()
-                .duration(3000)
-                .attrTween("transform", rotTween)
-                .each("end", function(){
+    return array;
+  }
 
-                    //mark question as seen
-                    d3.select(".slice:nth-child(" + (picked + 1) + ") path")
-                        .attr("fill", "#111");
-
-                    //populate question
-                    d3.select("#question h1")
-                        .text(data[picked].question);
-
-                    oldrotation = rotation;
-                
-                    container.on("click", spin);
-                });
-        }
-
-        //make arrow
-        svg.append("g")
-            .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
-            .append("path")
-            .attr("d", "M-" + (r*.15) + ",0L0," + (r*.05) + "L0,-" + (r*.05) + "Z")
-            .style({"fill":"black"});
-
-        //draw spin circle
-        container.append("circle")
-            .attr("cx", 0)
-            .attr("cy", 0)
-            .attr("r", 60)
-            .style({"fill":"white","cursor":"pointer"});
-
-        //spin text
-        container.append("text")
-            .attr("x", 0)
-            .attr("y", 15)
-            .attr("text-anchor", "middle")
-            .text("SPIN")
-            .style({"font-weight":"bold", "font-size":"30px"});
-        
-        
-        function rotTween(to) {
-          var i = d3.interpolate(oldrotation % 360, rotation);
-          return function(t) {
-            return "rotate(" + i(t) + ")";
-          };
-        }
-        
-        
-        function getRandomNumbers(){
-            var array = new Uint16Array(1000);
-            var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
-
-            if(window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues === "function"){
-                window.crypto.getRandomValues(array);
-                console.log("works");
-            } else {
-                //no support for crypto, get crappy random numbers
-                for(var i=0; i < 1000; i++){
-                    array[i] = Math.floor(Math.random() * 100000) + 1;
-                }
-            }
-
-            return array;
-        }
-
-    </script>
+</script>
 
 {{!-- End wheel --}}
 
 {{!-- map section --}}
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="section3"></div>
+    <div id="map" style="text-align:center">
+    </div>
+
+{{!-- button --}}
 <div class="container">
-
-  MAP WILL GO HERE!
-  
+  <div class="find" id="scroll"><a href="#anchor4" class="scrollLink">
+        <button class="btn btn-outline-light" type="button" id="button-find">Add a Brewery!<i class="fa fa-search"></i></button>
+      </a></div>  
 </div>
+   
+    
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
 
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
 
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_uAVYhzMgj0xOeaK9Clgjem9ynh6CtYw&libraries=places&callback=initAutocomplete"
+         async defer></script>
 
 
 
 <div id="home">
-  <div class="container" id="section3">
+  <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
         <h2>Don't See your favorite Brewery?</h2>
-        <form class="clearfix mb-4" action="POST">
+        <form class="clearfix mb-4" action="POST" id="section4">
           <div class="form-group">
             <label for="example-text">Please add it here!</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Name">
@@ -312,14 +384,14 @@ $(document).ready(function(){
         </ul>
       </div>
     </div>
-<div>
-  <br>
-         
-         
+    <div>
+      <br>
 
 
 
-  </div>
+
+
+    </div>
   </div>
 
 
