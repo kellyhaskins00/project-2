@@ -16,11 +16,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
    
-    
-    
-    
-    
-    
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
         var padding = {top:20, right:40, bottom:0, left:0},
@@ -32,31 +27,25 @@
             picked = 100000,
             oldpick = [],
             color = d3.scale.ordinal().range(["#2dcc70", "#e65445", "#3598db", "#f1c40f"]);
-
-            //color = d3.scale.category10();//category20c()
-
-            //color(d3.scale.ordinal().range(["hexcolor1", "hexcolor2", "hexcolor3", "hexcolor4", "hexcolor5", "hexcolor6", "hexcolor7"]).range());
-
             
-                
         var data = [
-                    {"label":"",  "value":1,  "question":"Staring contest between you and player to your left - first to blink loses and drinks"}, // padding
-                    {"label":"",  "value":1,  "question":"Guys: All the guys and YOU must finish their drinks."}, //font-family
-                    {"label":"",  "value":1,  "question":"Girls: All the girls and YOU must finish their drinks."}, //color
-                    {"label":"",  "value":1,  "question":"SHOTGUN CHALLENGE: self-explanatory"}, //font-weight
-                    {"label":"",  "value":1,  "question":"Tell the best joke you know. If no one laughs, drink 3 sips."}, //font-size
-                    {"label":"",  "value":1,  "question":"What CSS property is used for changing the background color of a box?"}, //background-color
-                    {"label":"",  "value":1,  "question":"Which word is used for specifying an HTML tag that is inside another tag?"}, //nesting
-                    {"label":"",  "value":1,  "question":"Which side of the box is the third number in: margin:1px 1px 1px 1px; ?"}, //bottom
-                    {"label":"",  "value":1,  "question":"What are the fonts that don't have serifs at the ends of letters called?"}, //sans-serif
-                    {"label":"", "value":1, "question":"With CSS selectors, what character prefix should one use to specify a class?"}, //period
-                    {"label":"", "value":1, "question":"With CSS selectors, what character prefix should one use to specify an ID?"}, //pound sign
-                    {"label":"", "value":1, "question":"In an HTML document, which tag holds all of the content people see?"}, //<body>
-                    {"label":"", "value":1, "question":"In an HTML document, which tag indicates an unordered list?"}, //<ul>
-                    {"label":"", "value":1, "question":"In an HTML document, which tag indicates the most important heading of your document?"}, //<h1>
-                    /*{"label":"", "value":1, "question":"What CSS property is used for specifying the area outside a box?"}, //margin
-                    {"label":"", "value":1, "question":"What type of bracket is used for HTML tags?"}, //< >
-                    {"label":"", "value":1, "question":"What type of bracket is used for CSS rules?"}, // { }
+                    {"label":"Optomism",  "value":1,  "question":"Optomism"}, 
+                    {"label":"Old Stove",  "value":1,  "question":"Old Stove"}, 
+                    {"label":"Elysian",  "value":1,  "question":"Elysian"}, 
+                    {"label":"RedHook Brewery",  "value":1,  "question":"RedHook Brewery"}, 
+                    {"label":"Tap House",  "value":1,  "question":"Tap House"},
+                    {"label":"Hard Rock",  "value":1,  "question":"Hard Rock"}, 
+                    {"label":"Peddler Brewing Company",  "value":1,  "question":"Peddler Brewing Company"}, 
+                    {"label":"Pike Brewing",  "value":1,  "question":"Pike Brewing"}, 
+                    {"label":"Two Beers Brewing Co.",  "value":1,  "question":"Two Beers Brewing Co."},
+                    {"label":"Pyramid", "value":1, "question":"Pyramid"}, 
+                    {"label":"Fremont Brewing", "value":1, "question":"Fremont Brewing"}, 
+                    {"label":"Lagunitas Brewing Company", "value":1, "question":"Lagunitas Brewing Company"}, 
+                    {"label":"Reuben's Brews", "value":1, "question":"Reuben's Brews"}, 
+                    {"label":"Rooftop Brewing Company", "value":1, "question":"Rooftop Brewing Company"}, 
+                    {"label":"Holy Mountain Brewing Company", "value":1, "question":"Holy Mountain Brewing Company"},
+                    {"label":"Cloudburst Brewing", "value":1, "question":"Cloudburst Brewing"},
+                    /*{"label":"", "value":1, "question":"What type of bracket is used for CSS rules?"}, // { }
                     {"label":"", "value":1, "question":"Which HTML tag is used for specifying a paragraph?"}, //<p>
                     {"label":"", "value":1, "question":"What should always be the very first line of code in your HTML?"}, //<!DOCTYPE html>
                     {"label":"", "value":1, "question":"What HTML tag holds all of the metadata tags for your page?"}, //<head>

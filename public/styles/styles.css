@@ -10,16 +10,20 @@
 #logo {
   padding-top: 85px;
 }
-#quote {
-  color: #71bf44;
-  font-size: 35pt;
-  font-family: 'Anton', sans-serif;
-}
 
-#quote2 {
+#find {
+  padding-top: 580px;
+}
+#quote {
   color: black;
   font-size: 35pt;
   font-family: 'Poiret One', cursive;
+}
+
+#quote2 {
+  color: #71bf44;
+  font-size: 35pt;
+  font-family: 'Anton', sans-serif;
 }
 
 h1 {
@@ -58,11 +62,17 @@ body{
 
 
 #home {
-  padding-top: 350px;
+  padding-top: 850px;
 }
 
 a{
 	color:#34495e;	
+}
+
+/* Wheel */
+
+#wheel {
+  padding-top: 280px;
 }
 
 text{
