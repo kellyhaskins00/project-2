@@ -20,12 +20,12 @@ module.exports = function(app) {
     });
   });
     // Load game page
-    app.get("/views/layouts/game.handlebars", function (req, res) {
-      console.log("i am here!");
-      res.render("game", {
-        msg: "Welcome!"
-      });
-    });
+    // app.get("/views/layouts/game.handlebars", function (req, res) {
+    //   console.log("i am here!");
+    //   res.render("game", {
+    //     msg: "Welcome!"
+    //   });
+    // });
   
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

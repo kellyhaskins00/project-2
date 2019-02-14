@@ -36,6 +36,14 @@
   font-family: 'Anton', sans-serif;
 }
 
+#button-find {
+  border-width: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#submit {
+  font-family: 'Roboto', sans-serif;
+}
 
 h1 {
   font-family: 'Anton', sans-serif;
@@ -49,8 +57,13 @@ h3 {
   font-family: 'Poiret One', cursive;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;;
+}
+
 label {
-  font-family: 'Poiret One', cursive;
+  font-size: 15pt;
+  font-family: 'Roboto', sans-serif;
 }
 
 input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
@@ -73,7 +86,8 @@ body{
 
 
 #home {
-  padding-top: 350px;
+  padding-top: 400px;
+  padding-bottom: 105px;
 }
 
 .find {

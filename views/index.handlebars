@@ -51,8 +51,8 @@
 <div>
   <div class="container" id="wheel">
     <p id="section2">
-    <span id="quote3">LET'S</span><span id="quote4">GO TO...</span>
-  </p>
+      <span id="quote3">LET'S</span><span id="quote4">GO TO...</span>
+    </p>
     <div class="row">
       <div class="col-8 offset-2">
 
@@ -70,7 +70,7 @@
 
 {{!-- Arrow to form --}}
 <div class="container" id="find">
-  <p>Need Help Finding your spot?</p>
+  <p>Need help finding your spot?</p>
   <div class="container" id="arrow">
     <a href="#section3"><img src="https://cdn.iconscout.com/icon/free/png-256/dropdown-25-475073.png" style="width:80px;height:auto;"></a>
   </div>
@@ -263,96 +263,96 @@
 {{!-- map section --}}
 <input id="pac-input" class="controls" type="text" placeholder="Search Box">
 <div id="section3"></div>
-    <div id="map" style="text-align:center">
-    </div>
+<div id="map" style="text-align:center">
+</div>
 
 {{!-- button --}}
 <div class="container">
   <div class="find" id="scroll"><a href="#anchor4" class="scrollLink">
-        <button class="btn btn-outline-light" type="button" id="button-find">Add a Brewery!<i class="fa fa-search"></i></button>
-      </a></div>  
+      <button class="btn btn-outline-dark" type="button" id="button-find">Add a Brewery!<i class="fa fa-search"></i></button>
+    </a></div>
 </div>
-   
-    
-    <script>
-      // This example adds a search box to a map, using the Google Place Autocomplete
-      // feature. People can enter geographical searches. The search box will return a
-      // pick list containing a mix of places and predicted search terms.
 
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      function initAutocomplete() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -33.8688, lng: 151.2195},
-          zoom: 13,
-          mapTypeId: 'roadmap'
-        });
+<script>
+  // This example adds a search box to a map, using the Google Place Autocomplete
+  // feature. People can enter geographical searches. The search box will return a
+  // pick list containing a mix of places and predicted search terms.
 
-        // Create the search box and link it to the UI element.
-        var input = document.getElementById('pac-input');
-        var searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // This example requires the Places library. Include the libraries=places
+  // parameter when you first load the API. For example:
+  // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-        // Bias the SearchBox results towards current map's viewport.
-        map.addListener('bounds_changed', function() {
-          searchBox.setBounds(map.getBounds());
-        });
+  function initAutocomplete() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: -33.8688, lng: 151.2195 },
+      zoom: 13,
+      mapTypeId: 'roadmap'
+    });
 
-        var markers = [];
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
-        searchBox.addListener('places_changed', function() {
-          var places = searchBox.getPlaces();
+    // Create the search box and link it to the UI element.
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-          if (places.length == 0) {
-            return;
-          }
+    // Bias the SearchBox results towards current map's viewport.
+    map.addListener('bounds_changed', function () {
+      searchBox.setBounds(map.getBounds());
+    });
 
-          // Clear out the old markers.
-          markers.forEach(function(marker) {
-            marker.setMap(null);
-          });
-          markers = [];
+    var markers = [];
+    // Listen for the event fired when the user selects a prediction and retrieve
+    // more details for that place.
+    searchBox.addListener('places_changed', function () {
+      var places = searchBox.getPlaces();
 
-          // For each place, get the icon, name and location.
-          var bounds = new google.maps.LatLngBounds();
-          places.forEach(function(place) {
-            if (!place.geometry) {
-              console.log("Returned place contains no geometry");
-              return;
-            }
-            var icon = {
-              url: place.icon,
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
-            };
-
-            // Create a marker for each place.
-            markers.push(new google.maps.Marker({
-              map: map,
-              icon: icon,
-              title: place.name,
-              position: place.geometry.location
-            }));
-
-            if (place.geometry.viewport) {
-              // Only geocodes have viewport.
-              bounds.union(place.geometry.viewport);
-            } else {
-              bounds.extend(place.geometry.location);
-            }
-          });
-          map.fitBounds(bounds);
-        });
+      if (places.length == 0) {
+        return;
       }
 
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_uAVYhzMgj0xOeaK9Clgjem9ynh6CtYw&libraries=places&callback=initAutocomplete"
-         async defer></script>
+      // Clear out the old markers.
+      markers.forEach(function (marker) {
+        marker.setMap(null);
+      });
+      markers = [];
+
+      // For each place, get the icon, name and location.
+      var bounds = new google.maps.LatLngBounds();
+      places.forEach(function (place) {
+        if (!place.geometry) {
+          console.log("Returned place contains no geometry");
+          return;
+        }
+        var icon = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25)
+        };
+
+        // Create a marker for each place.
+        markers.push(new google.maps.Marker({
+          map: map,
+          icon: icon,
+          title: place.name,
+          position: place.geometry.location
+        }));
+
+        if (place.geometry.viewport) {
+          // Only geocodes have viewport.
+          bounds.union(place.geometry.viewport);
+        } else {
+          bounds.extend(place.geometry.location);
+        }
+      });
+      map.fitBounds(bounds);
+    });
+  }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_uAVYhzMgj0xOeaK9Clgjem9ynh6CtYw&libraries=places&callback=initAutocomplete"
+  async defer></script>
 
 
 
@@ -360,20 +360,21 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>Don't See your favorite Brewery?</h2>
-        <form class="clearfix mb-4" action="POST" id="section4">
+        <h1>Don't See your favorite Brewery?</h1>
+        <h2>We Can Add It For You</h2>
+        <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="example-text">Please add it here!</label>
+            <br>
+            <label for="example-text">BREWERY</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Name">
           </div>
           <div class="form-group">
-            <label for="example-description">Neighborhood</label>
+            <label for="example-description">NEIGHBORHOOD</label>
             <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Capitol Hill, Fremont, Ballard, etc."></textarea>
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
+          <button id="submit" class="btn btn-dark float-right">Submit</button>
         </form>
-        <h3>Breweries:</h3>
+        <h3 id="anchor4">ADDED BREWERIES:</h3>
         <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
