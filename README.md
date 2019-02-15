@@ -13,4 +13,10 @@ Third - If you don't know where you brewery is located, find it on the map.
 
 Lastly- If you don't see your favorite brewery on the wheel, please add it on the form at the bottom of the app. Our team will review your input and add your responses at the next update.
 
- 
+ ![alt text](https://raw.githubusercontent.com/kellyhaskins00/project-2/master/images/section_1.JPG)
+
+![alt text](https://raw.githubusercontent.com/kellyhaskins00/project-2/master/images/section_2.JPG)
+2
+![alt text](https://raw.githubusercontent.com/kellyhaskins00/project-2/master/images/section_3.JPG)
+
+![alt text](https://raw.githubusercontent.com/kellyhaskins00/project-2/master/images/section_4.JPG)
