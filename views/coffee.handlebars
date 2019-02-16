@@ -51,11 +51,11 @@
 <div class="container" id="main">
 
   <div id="logo">
-    <img src="https://image.flaticon.com/icons/png/512/1112/1112894.png" style="width:250px;height:auto;"></div>
+    <img src="https://image.flaticon.com/icons/svg/999/999940.svg" style="width:250px;height:auto;"></div>
   <p>
-    <span id="quote">THE</span><span id="quote2">SPINS</span>
+    <span id="quote">THE</span><span id="quote3_coffee">SPINS</span>
   </p>
-  <p>Ever struggle deciding on where to grab a beer?</p>
+  <p>Ever struggle deciding on where to grab a cup of coffee?</p>
 
 </div>
 
@@ -69,7 +69,7 @@
 <div>
   <div class="container" id="wheel">
     <p id="section2">
-    <span id="quote3">LET'S</span><span id="quote4">GO TO...</span>
+    <span id="quote3">LET'S</span><span id="quote4_coffee">GO TO...</span>
   </p>
     <div class="row">
       <div class="col-8 offset-2">
@@ -111,25 +111,25 @@
     oldrotation = 0,
     picked = 100000,
     oldpick = [],
-    color = d3.scale.ordinal().range(["#84d0a6", "#7dad91", "#79bf99", "#6e9981"]);
+    color = d3.scale.ordinal().range(["#92d8ff", "#bdebff", "#c6c5ca", "#dd9f80"]);
 
   var data = [
-    { "label": "Optimism", "value": 1, "question": "Optimism" },
-    { "label": "Old Stove", "value": 1, "question": "Old Stove" },
-    { "label": "Elysian", "value": 1, "question": "Elysian" },
-    { "label": "RedHook Brewery", "value": 1, "question": "RedHook Brewery" },
-    { "label": "Tap House", "value": 1, "question": "Tap House" },
-    { "label": "Hard Rock", "value": 1, "question": "Hard Rock" },
-    { "label": "Peddler Brewing Company", "value": 1, "question": "Peddler Brewing Company" },
-    { "label": "Pike Brewing", "value": 1, "question": "Pike Brewing" },
-    { "label": "Two Beers Brewing Co.", "value": 1, "question": "Two Beers Brewing Co." },
-    { "label": "Pyramid", "value": 1, "question": "Pyramid" },
-    { "label": "Fremont Brewing", "value": 1, "question": "Fremont Brewing" },
-    { "label": "Lagunitas Brewing Company", "value": 1, "question": "Lagunitas Brewing Company" },
-    { "label": "Reuben's Brews", "value": 1, "question": "Reuben's Brews" },
-    { "label": "Rooftop Brewing Company", "value": 1, "question": "Rooftop Brewing Company" },
-    { "label": "Holy Mountain Brewing Company", "value": 1, "question": "Holy Mountain Brewing Company" },
-    { "label": "Cloudburst Brewing", "value": 1, "question": "Cloudburst Brewing" },
+    { "label": "La Marzocco Cafe", "value": 1, "question": "La Marzocco Cafe" },
+    { "label": "QED Coffee", "value": 1, "question": "QED Coffee" },
+    { "label": "Moore Coffee Shop", "value": 1, "question": "Moore Coffee Shop" },
+    { "label": "Victrola Coffee Roasters", "value": 1, "question": "Victrola Coffee Roasters" },
+    { "label": "Storyville Coffee Pike Place", "value": 1, "question": "Storyville Coffee Pike Place" },
+    { "label": "Cherry Street Coffee House", "value": 1, "question": "Cherry Street Coffee House" },
+    { "label": "Capitol Coffee Works", "value": 1, "question": "Capitol Coffee Works" },
+    { "label": "Caffe Vita", "value": 1, "question": "Caffe Vita" },
+    { "label": "Union Coffee", "value": 1, "question": "Union Coffee" },
+    { "label": "Elm Coffee Roasters", "value": 1, "question": "Elm Coffee Roasters" },
+    { "label": "Cascade Coffee Works", "value": 1, "question": "Cascade Coffee Works" },
+    { "label": "Porchlight Coffee & Records", "value": 1, "question": "Porchlight Coffee & Records" },
+    { "label": "Analog Coffee", "value": 1, "question": "Analog Coffee" },
+    { "label": "Kaladi Brothers Coffee", "value": 1, "question": "Kaladi Brothers Coffee" },
+    { "label": "Milstead & Co.", "value": 1, "question": "Milstead & Co." },
+    { "label": "Bedlam Coffee", "value": 1, "question": "Bedlam Coffee" },
   ];
 
 
@@ -288,7 +288,7 @@
 {{!-- button --}}
 <div class="container">
   <div class="find" id="scroll"><a href="#anchor4" class="scrollLink">
-        <button class="btn btn-outline-light" type="button" id="button-find">Add a Brewery!<i class="fa fa-search"></i></button>
+        <button class="btn btn-outline-light" type="button" id="button-find">Add a Coffee Shop!<i class="fa fa-search"></i></button>
       </a></div>  
 </div>
    
@@ -379,12 +379,12 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h1>Don't See your favorite Brewery?</h1>
+        <h1>Don't See your favorite Cafe?</h1>
         <h2>We Can Add It For You</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <br>
-            <label for="example-text">Brewery</label>
+            <label for="example-text">Coffee Shop</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Name">
           </div>
           <div class="form-group">
@@ -393,7 +393,7 @@
           </div>
           <button id="submit" class="btn btn-dark float-right">Submit</button>
         </form>
-        <h3 id="anchor4">ADDED BREWERIES:</h3>
+        <h3 id="anchor4">ADDED COFFEE SHOPS:</h3>
         <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
