@@ -51,11 +51,11 @@
 <div class="container" id="main">
 
   <div id="logo">
-    <img src="https://image.flaticon.com/icons/png/512/1112/1112894.png" style="width:250px;height:auto;"></div>
+    <img src="https://image.flaticon.com/icons/svg/284/284749.svg" style="width:250px;height:auto;"></div>
   <p>
-    <span id="quote">THE</span><span id="quote2">SPINS</span>
+    <span id="quote">THE</span><span id="quote4_date">SPINS</span>
   </p>
-  <p>Ever struggle deciding on where to grab a beer?</p>
+  <p>Ever struggle deciding on where to go for a date?</p>
 
 </div>
 
@@ -69,7 +69,7 @@
 <div>
   <div class="container" id="wheel">
     <p id="section2">
-    <span id="quote3">LET'S</span><span id="quote4">GO TO...</span>
+    <span id="quote3">LET'S</span><span id="quote4_date">GO TO...</span>
   </p>
     <div class="row">
       <div class="col-8 offset-2">
@@ -111,25 +111,25 @@
     oldrotation = 0,
     picked = 100000,
     oldpick = [],
-    color = d3.scale.ordinal().range(["#84d0a6", "#7dad91", "#79bf99", "#6e9981"]);
+    color = d3.scale.ordinal().range(["#ff6376", "#ffd553", "#ff9596", "#fdba55"]);
 
   var data = [
-    { "label": "Optimism", "value": 1, "question": "Optimism" },
-    { "label": "Old Stove", "value": 1, "question": "Old Stove" },
-    { "label": "Elysian", "value": 1, "question": "Elysian" },
-    { "label": "RedHook Brewery", "value": 1, "question": "RedHook Brewery" },
-    { "label": "Tap House", "value": 1, "question": "Tap House" },
-    { "label": "Hard Rock", "value": 1, "question": "Hard Rock" },
-    { "label": "Peddler Brewing Company", "value": 1, "question": "Peddler Brewing Company" },
-    { "label": "Pike Brewing", "value": 1, "question": "Pike Brewing" },
-    { "label": "Two Beers Brewing Co.", "value": 1, "question": "Two Beers Brewing Co." },
-    { "label": "Pyramid", "value": 1, "question": "Pyramid" },
-    { "label": "Fremont Brewing", "value": 1, "question": "Fremont Brewing" },
-    { "label": "Lagunitas Brewing Company", "value": 1, "question": "Lagunitas Brewing Company" },
-    { "label": "Reuben's Brews", "value": 1, "question": "Reuben's Brews" },
-    { "label": "Rooftop Brewing Company", "value": 1, "question": "Rooftop Brewing Company" },
-    { "label": "Holy Mountain Brewing Company", "value": 1, "question": "Holy Mountain Brewing Company" },
-    { "label": "Cloudburst Brewing", "value": 1, "question": "Cloudburst Brewing" },
+    { "label": "Spinasse", "value": 1, "question": "Spinasse" },
+    { "label": "Il Corvo", "value": 1, "question": "Il Corvo" },
+    { "label": "Salumi", "value": 1, "question": "Salumi" },
+    { "label": "Shuckers Restaurant", "value": 1, "question": "Shuckers Restaurant" },
+    { "label": "Canlis", "value": 1, "question": "Canlis" },
+    { "label": "Matt's in the Market", "value": 1, "question": "Matt's in the Market" },
+    { "label": "Pike Place Chowder", "value": 1, "question": "Pike Place Chowder" },
+    { "label": "The Pink Door", "value": 1, "question": "The Pink Door" },
+    { "label": "Market Grill", "value": 1, "question": "Market Grill" },
+    { "label": "Metropolitan Grill", "value": 1, "question": "Metropolitan Grill" },
+    { "label": "Lecosho", "value": 1, "question": "Lecosho" },
+    { "label": "Purple Cafe and Wine Bar", "value": 1, "question": "Purple Cafe and Wine Bar" },
+    { "label": "Lark Restaurant", "value": 1, "question": "Lark Restaurant" },
+    { "label": "Lola", "value": 1, "question": "Lola" },
+    { "label": "The Capital Grille", "value": 1, "question": "The Capital Grille" },
+    { "label": "Stateside", "value": 1, "question": "Stateside" },
   ];
 
 
@@ -288,7 +288,7 @@
 {{!-- button --}}
 <div class="container">
   <div class="find" id="scroll"><a href="#anchor4" class="scrollLink">
-        <button class="btn btn-outline-light" type="button" id="button-find">Add a Brewery!<i class="fa fa-search"></i></button>
+        <button class="btn btn-outline-light" type="button" id="button-find">Add a Spot!<i class="fa fa-search"></i></button>
       </a></div>  
 </div>
    
@@ -379,12 +379,12 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h1>Don't See your favorite Brewery?</h1>
+        <h1>Don't See your favorite Date Spot?</h1>
         <h2>We Can Add It For You</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <br>
-            <label for="example-text">Brewery</label>
+            <label for="example-text">Restaurant, Arcade, Bowling Alley, etc.</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Name">
           </div>
           <div class="form-group">
@@ -393,7 +393,7 @@
           </div>
           <button id="submit" class="btn btn-dark float-right">Submit</button>
         </form>
-        <h3 id="anchor4">ADDED BREWERIES:</h3>
+        <h3 id="anchor4">ADDED SPOTS:</h3>
         <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
